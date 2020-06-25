@@ -6,7 +6,22 @@
 			if (/^\S+@\S+\.\S+$/.test(username) )
 			{
 				if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/.test(password)){
-					alert("Login Successfull");
+					$.ajax({
+						url: "login.php",
+						data:{username:username,password:password}, 
+						type:"POST",
+						success: function(result){
+							console.log('result********');
+							let response=JSON.parse(result)
+							
+							if(response.code ==200){
+								alert("Login Successful.");
+								
+							}else{
+								alert("Login Error.");
+							}
+								
+						}});	
 				}
 				else{
 						alert("Password matching expression. Password must be at least 4 characters, no more than 8 characters, and must include at least one upper case letter, one lower case letter, and one numeric digit.");

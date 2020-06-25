@@ -6,7 +6,8 @@ function checkLogin(){
    if (/^\S+@\S+\.\S+$/.test(username) )
    {
      if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/.test(password)){
-       alert("Login Successfull");
+       alert('Login Successful');
+	   
      }
      else{
          alert("Password matching expression. Password must be at least 4 characters, no more than 8 characters, and must include at least one upper case letter, one lower case letter, and one numeric digit.");

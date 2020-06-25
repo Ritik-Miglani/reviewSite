@@ -1,3 +1,22 @@
+<?php
+	
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "popularity_analysis";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM shows";
+$result = mysqli_query($conn, $sql);
+?>
+
 <html>
 <head>
 	<title>Trending Shows</title>
@@ -141,117 +160,29 @@
     <th>Imdb</th>
     <th>Rotton</th>
     <th>Available on</th>
+    <th>Action</th>
 	</b>
   </tr>
-  <tr>
-    <td></td>
-    <td>Sacred games</td>
-    <td>2017</td>
-    <td>18+</td>
-    <td>8.7</td>
-    <td>81%</td>
-    <td>Netflix</td>
-  </tr>
   
-  <tr>
-    <td></td>
-    <td>13 reasons why</td>
-    <td>2017</td>
-    <td>18+</td>
-    <td>7.7</td>
-    <td>36%</td>
-    <td>Netflix</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>Sherlock</td>
-    <td>2015</td>
-    <td>18+</td>
-    <td>9.1</td>
-    <td>90%</td>
-    <td>Prime video</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>The Family Man</td>
-    <td>2018</td>
-    <td>18+</td>
-    <td>8.6</td>
-    <td>88%</td>
-    <td>Prime video</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>Rick and Morty</td>
-    <td>2015</td>
-    <td>18+</td>
-    <td>9.1</td>
-    <td>91%</td>
-    <td>Netflix</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>Deception</td>
-    <td>2019</td>
-    <td>18+</td>
-    <td>7.5</td>
-    <td>64%</td>
-    <td>Prime Video</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>Game of Thrones</td>
-    <td>2017</td>
-    <td>18+</td>
-    <td>9.3</td>
-    <td>89%</td>
-    <td>Hotstar</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>Breaking Bad</td>
-    <td>2017</td>
-    <td>18+</td>
-    <td>9.5</td>
-    <td>96%</td>
-    <td>Netflix</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>Watchmen</td>
-    <td>2019</td>
-    <td>18+</td>
-    <td>7.8</td>
-    <td>86%</td>
-    <td>Hotstar</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>Formula 1</td>
-    <td>2019</td>
-    <td>13+</td>
-    <td>8.6</td>
-    <td>88%</td>
-    <td>Netflix</td>
-  </tr>
-  
-  <tr>
-    <td></td>
-    <td>Altered Carbon</td>
-    <td>2020</td>
-    <td>18+</td>
-    <td>8.1</td>
-    <td>76%</td>
-    <td>Netflix</td>
-  </tr>
+  <?php
+  if (mysqli_num_rows($result) > 0) {
+	$counter = 1;
+	 while($row = mysqli_fetch_assoc($result)) {
+		 $id = $row['id'];
+		  echo '<tr>';
+		  echo '<td></td>';
+		  echo '<td>'.$row["title"].'</td>';
+		  echo '<td>'.$row["year"].'</td>';
+		  echo '<td>'.$row["rating"].'</td>';
+		  echo '<td>'.$row["imdb"].'</td>';
+		  echo '<td>'.$row["rotton"].'</td>';
+		  echo '<td>'.$row["available_on"].'</td>';
+		  echo'<td><a href="#" id="'.$id.'" onClick="return add_rating('.$id.')" >Rate</a></td>';
+		  echo '</tr>';
+		  $counter++;
+	  }
+  }
+  ?>
 </table>
 <div>
 
@@ -268,6 +199,8 @@
 <button class="button" type="button" onclick="deleteFunction()">DELETE</button>
 </form>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 function myFunction() {
   var table = document.getElementById("myTable");
@@ -328,6 +261,27 @@ function sortTable() {
   }
 }
 
+function add_rating(id){
+	let rating = getRating();
+	
+	$.ajax({
+		url: "ajax.php",
+		data:{id:id,rating:rating}, 
+		type:"POST",
+		success: function(result){
+			location.reload();
+	}});	
+}
+
+function getRating() {
+  var txt;
+  var rating = prompt("Please enter the rating( 1 to 10 )");
+  if (rating == null || rating == "") {
+    
+  } else {
+    return rating;
+  }
+}
 </script>
 	
 <hr width=100% size=6px noshade	color="#66fcf1">
