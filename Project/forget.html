@@ -1,0 +1,113 @@
+<html>
+<head>
+  <style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+/* css class for the login generated errors */
+
+body{
+  background-image: url(oops.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.profilepress-reset-status {
+  width: 400px;
+  text-align: center;
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: medium none;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1.4;
+  padding: 8px 5px;
+  margin: auto;
+}
+
+.memo-reset-success {
+   width: 400px;
+  text-align: center;
+  background-color: #2ecc71;
+  color: #ffffff;
+  border: medium none;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1.4;
+  padding: 8px 5px;
+  margin: auto;
+}
+
+#sc-password {
+  background: #f0f0f0;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 8px;
+  margin-bottom: 2%;
+  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+}
+
+#sc-password h1 {
+  background:#66fcf1;
+  padding: 20px 0;
+  font-size: 140%;
+  font-weight: 300;
+  text-align: center;
+  color: black;
+}
+
+div#sc-password .sc-container {
+  background: #66fcf1;
+  padding: 6% 4%;
+}
+
+div#sc-password input[type="email"],
+div#sc-password input[type="text"],
+div#sc-password input[type="password"] {
+  width: 92%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 4%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 95%;
+  color: #555;
+}
+
+div#sc-password input[type="submit"] {
+  width: 100%;
+  background:black;
+  border: 0;
+  padding: 4%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+}
+
+div#sc-password input[type="submit"]:hover {
+  background: red;
+}
+.error1 {
+    color: red;
+    font-size: 90%;
+}
+
+</style>
+</head>
+<body bgcolor="black">
+<form action="action_page1.php" method="post" class="container" onsubmit="return validate()" >
+<div id="sc-password">
+  <h1>Reset Password</h1>
+  <div class="sc-container">
+    <input type="text" id="femail" placeholder="Username or Email" />
+	<div class="error1" id="femailErr"></div><br>
+    <input type="submit" value="Get New Password" />
+  </div>
+</div>
+</form>
+</body>
+<script src="forget.js"></script>
+</html>
