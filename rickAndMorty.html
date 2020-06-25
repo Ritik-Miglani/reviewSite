@@ -1,0 +1,110 @@
+<html>
+<head>
+<meta name="description" content="tv shows popularity analysis using data mining">
+<meta name="keywords" content="HTML,CSS,JavaScript">
+<meta name="author" content="Anshul Tyagi and Ritik Miglani">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="description.css">
+<script src='loginsearch.js'></script>
+</head>
+<body bgcolor="black" text="white">
+  <div id="hide1" class="login-screen">
+        <div class="gradient-bg">
+      <div class="login-box">
+        <img src="logo.png" class="avatar">
+        <form class="animate" method="post" onsubmit="return checkLogin()">
+          <h1>Login Here</h1>
+          <p>Username</p>
+          <input type="text" name="username" placeholder="Enter Username" id="user">
+          <p>Password</p>
+          <input type="password" name="password" placeholder="Enter Password" id="pass">
+          <input type="submit" name="submit" value="Login">
+          <span onclick="document.getElementById('hide1').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <a href="forget.html">Forget Password</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="topnav1">
+    <a href="homepage.html"><img src="behenchod.png" style="height:15%; margin-left: 10%; margin-top:3px; "> </a>
+    <div class="search-container">
+      <input type="text" placeholder="Search for products,brands.." id="search_box_input" onkeydown="document.getElementById('s_result').style.display='block'" onkeyup="searchresult()">
+      <button type="submit"><i class="fa fa-search"></i></button>
+      <div class="search_result" id="s_result">
+        	<ul id="myMenu">
+					<li><a href="sg.html">sacred games</a>
+					<li><a href="watchmen.html">Watchmen</a>
+					<li><a href="strangerThings.html">stranger things</a>
+					<li><a href="13ry.html">13 reasons why</a>
+					<li><a href="sherlock.html">sherlock</a>
+					<li><a href="deception.html">deception</a>
+					<li><a href="rickAndMorty.html">rick and morty</a>
+					<li><a href="GOT.html">game of thrones</a>
+					<li><a href="familyMan.html">the family man</a>
+					<li><a href="alteredCarbon.html">altered carbon</a>
+					<li><a href="breakingBad.html">breaking bad</a>
+					<li><a href="formula.html">formula 1</a>
+			</ul>
+    </div>
+    </div>
+  </div>
+  <div class="topnav">
+    <a href="homepage.html">Home</a>
+    <a href="trending.html">Trending Shows</a>
+    <a href="feedback.html">Feedback Form</a>
+    <a href="about-us.html">About us</a>
+    <button onclick="document.getElementById('hide1').style.display='block'" class="right"><i class="fa fa-fw fa-user"></i>Log In</button>
+  </div>
+  <table cellpadding=10px width=60% >
+      <tr>
+        <td>
+          <div class="dimg">
+            <img src="ram.jpg">
+          </div>
+        </td>
+        <td align="left">
+            <h1>Rick And Morty</h1>
+            IMDB Rating - 9.2<span class="fa fa-star" style="margin-left:20px"></span><p>
+            Rotten Tomatoes 94%<p>
+            Seasons - 4<p>
+            Created by-
+            Ryan Ridley, Jessica Gao, Dan Guterman
+
+        </td>
+      </tr>
+  </table>
+  <h4><u>DETAILS</u></h4>
+   Rick and Morty is an American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon for Cartoon Network's late-night programming block Adult Swim. The series follows the misadventures of cynical mad scientist Rick Sanchez and his good-hearted but fretful grandson Morty Smith, who split their time between domestic life and interdimensional adventures.
+<p>
+Roiland voices the eponymous characters, with Chris Parnell, Spencer Grammer and Sarah Chalke voicing the rest of the family. The series originated from an animated short parody film of Back to the Future, created by Roiland for Channel 101, a short film festival co-founded by Harmon. The series has been acclaimed by critics for its originality, creativity and humor.
+
+The series has been picked up for an additional seventy episodes over an unspecified number of seasons. The fourth season premiered on November 10, 2019, and consists of ten episodes.
+  <style>
+   /*footer styling*/
+  .footer {
+    width: 100%;
+    height: 8vw;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  .footer p{
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
+  }
+
+  </style>
+
+  <div class="footer">
+    <p>Public Review - your one stop to check the popularity of the tv series currently running across the globe.</p>
+  </div>
+
+</html>
+

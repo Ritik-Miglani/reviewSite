@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta name="description" content="tv shows popularity analysis using data mining">
+<meta name="keywords" content="HTML,CSS,JavaScript">
+<meta name="author" content="Anshul Tyagi and Ritik Miglani">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="description.css">
+<script src='loginsearch.js'></script>
+</head>
+<body bgcolor="black" text="white">
+  <div id="hide1" class="login-screen">
+        <div class="gradient-bg">
+      <div class="login-box">
+        <img src="logo.png" class="avatar">
+        <form class="animate" method="post" onsubmit="return checkLogin()">
+          <h1>Login Here</h1>
+          <p>Username</p>
+          <input type="text" name="username" placeholder="Enter Username" id="user">
+          <p>Password</p>
+          <input type="password" name="password" placeholder="Enter Password" id="pass">
+          <input type="submit" name="submit" value="Login">
+          <span onclick="document.getElementById('hide1').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <a href="forget.html">Forget Password</a>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="topnav1">
+    <a href="homepage.html"><img src="behenchod.png" style="height:15%; margin-left: 10%; margin-top:3px; "> </a>
+    <div class="search-container">
+      <input type="text" placeholder="Search for products,brands.." id="search_box_input" onkeydown="document.getElementById('s_result').style.display='block'" onkeyup="searchresult()">
+      <button type="submit"><i class="fa fa-search"></i></button>
+      <div class="search_result" id="s_result">
+        	<ul id="myMenu">
+					<li><a href="sg.html">sacred games</a>
+					<li><a href="watchmen.html">Watchmen</a>
+					<li><a href="strangerThings.html">stranger things</a>
+					<li><a href="13ry.html">13 reasons why</a>
+					<li><a href="sherlock.html">sherlock</a>
+					<li><a href="deception.html">deception</a>
+					<li><a href="rickAndMorty.html">rick and morty</a>
+					<li><a href="GOT.html">game of thrones</a>
+					<li><a href="familyMan.html">the family man</a>
+					<li><a href="alteredCarbon.html">altered carbon</a>
+					<li><a href="breakingBad.html">breaking bad</a>
+					<li><a href="formula.html">formula 1</a>
+			</ul>
+    </div>
+    </div>
+  </div>
+  <div class="topnav">
+    <a href="homepage.html">Home</a>
+    <a href="trending.html">Trending Shows</a>
+    <a href="feedback.html">Feedback Form</a>
+    <a href="about-us.html">About us</a>
+    <button onclick="document.getElementById('hide1').style.display='block'" class="right"><i class="fa fa-fw fa-user"></i>Log In</button>
+  </div>
+  <table cellpadding=10px width=60% >
+      <tr>
+        <td>
+          <div class="dimg">
+            <img src="alteredCarbon.jpg">
+          </div>
+        </td>
+        <td align="left">
+            <h1>Altered Carbon</h1>
+            IMDB Rating - 8.1<span class="fa fa-star" style="margin-left:20px"></span><p>
+            Rotten Tomatoes 76%<p>
+            Seasons - 2<p>
+            Created by-
+            Jeff Russo
+
+        </td>
+      </tr>
+  </table>
+  <h4><u>DETAILS</u></h4>
+  Altered Carbon is an American cyberpunk web television series created by Laeta Kalogridis and based on the 2002 novel of the same title by English author Richard K. Morgan. In a world where consciousness can be transferred to different bodies, Takeshi Kovacs, a former soldier turned investigator, must solve a murder. The first season consists of ten episodes and premiered on Netflix on February 2, 2018. On July 27, 2018, the series was renewed for a second season of eight episodes, which was released on February 27, 2020, with an anime film set before the first season released on March 19, 2020. The series received generally positive reviews.<p>
+  The series takes place over 360 years in the future, with most episodes the first season set in the year 2384, in a futuristic metropolis known as Bay City. In the future, a person's memories and consciousness are written onto a disk-shaped device called a cortical stack, which is implanted in the vertebrae at the back of the neck. These storage devices are of alien design and have been reverse engineered and mass-produced but can only be made from the material on Harlan's world. Physical human or synthetic bodies are called "sleeves" and stacks can be transferred to new bodies after death, but a person can still be killed if their stack is destroyed and there is no backup. While this means anyone can live forever, only the wealthiest, known as "Meths" in reference to Methuselah, have the means to change bodies through clones and remote storage of their consciousness in satellites, so they never have to die of old age before being resleeved.<p>
+
+Takeshi Kovacs, a political operative with mercenary skills, is the sole surviving soldier of the Envoys, a rebel group defeated in an uprising against the new world order. In the first season, set 250 years after the Envoys are destroyed, his stack is pulled out of prison by 300-year-old Meth Laurens Bancroft, one of the wealthiest men in the settled worlds. Bancroft offers him the chance to solve a murder—Bancroft's own—to get a new shot at life. In the second season, set 30 years later, Kovacs, now in a new sleeve, continues to search for his lost love and Envoy leader Quellcrist Falconer.
+  <style>
+   /*footer styling*/
+  .footer {
+    width: 100%;
+    height: 8vw;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-top: 10%;
+  }
+
+  .footer p{
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
+  }
+
+  </style>
+
+  <div class="footer">
+    <p>Public Review - your one stop to check the popularity of the tv series currently running across the globe.</p>
+  </div>
+
+</html>
+

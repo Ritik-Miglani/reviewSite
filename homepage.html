@@ -1,0 +1,189 @@
+<html>
+<head>
+	<title>Popularity of TV Shows</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="description" content="tv shows popularity analysis using data mining">
+	<meta name="keywords" content="HTML,CSS,JavaScript">
+	<meta name="author" content="Anshul Tyagi and Ritik Miglani">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src='loginsearch.js'>
+
+	</script>
+</head>
+<body bgcolor="black">
+	<div id="hide1" class="login-screen">
+        <div class="gradient-bg">
+			<div class="login-box">
+				<img src="logo.png" class="avatar">
+				<form class="animate" method="post" onsubmit="return checkLogin()">
+					<h1>Login Here</h1>
+					<p>Username</p>
+					<input type="text" name="username" placeholder="Enter Username" id="user">
+					<p>Password</p>
+					<input type="password" name="password" placeholder="Enter Password" id="pass">
+					<input type="submit" name="submit" value="Login">
+					<span onclick="document.getElementById('hide1').style.display='none'" class="close" title="Close Modal">&times;</span>
+					<a href="forget.html">Forget Password</a>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="topnav1">
+		<a href="homepage.html"><img src="behenchod.png" style="height:15%; margin-left: 10%; margin-top:3px; "> </a>
+		<div class="search-container">
+			<input type="text" placeholder="Search for products,brands.." id="search_box_input" onkeydown="document.getElementById('s_result').style.display='block'" onkeyup="searchresult()">
+			<button type="submit"><i class="fa fa-search"></i></button>
+			<div class="search_result" id="s_result">
+			<ul id="myMenu">
+					<li><a href="sg.html">sacred games</a>
+					<li><a href="watchmen.html">Watchmen</a>
+					<li><a href="strangerThings.html">stranger things</a>
+					<li><a href="13ry.html">13 reasons why</a>
+					<li><a href="sherlock.html">sherlock</a>
+					<li><a href="deception.html">deception</a>
+					<li><a href="rickAndMorty.html">rick and morty</a>
+					<li><a href="GOT.html">game of thrones</a>
+					<li><a href="familyMan.html">the family man</a>
+					<li><a href="alteredCarbon.html">altered carbon</a>
+					<li><a href="breakingBad.html">breaking bad</a>
+					<li><a href="formula.html">formula 1</a>
+			</ul>
+		</div>
+		</div>
+	</div>
+	<div class="topnav">
+		<a href="homepage.html">Home</a>
+		<a href="trending.php">Trending Shows</a>
+		<a href="feedback.html">Feedback Form</a>
+		<a href="about-us.html">About us</a>
+		<button onclick="document.getElementById('hide1').style.display='block'" class="right"><i class="fa fa-fw fa-user"></i>Log In</button>
+	</div>
+	<center>
+    <div style="max-width:1100px; margin-top:10px; height: 45vw;">
+		<img class="mySlides" src="altered.jpg">
+		<img class="mySlides" src="wm.jpg">
+		<img class="mySlides" src="rick.jpg">
+		<img class="mySlides" src="family man.jpg">
+		<img class="mySlides" src="f1.jpg">
+		<img class="mySlides" src="st.jpg">
+		<img class="mySlides" src="sg.png">
+		<img class="mySlides" src="13.jpg">
+		<img class="mySlides" src="got.jpg">
+		<img class="mySlides" src="sherlock.jpg">
+		<img class="mySlides" src="dpn.jpg">
+
+
+	</div><center>
+	<style>
+				* {
+					box-sizing: border-box;
+				}
+
+				.gallary_view {
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				.gallary_view a {
+					width: 20vw;
+					display: inline-flex;
+					flex: auto;
+					margin: 10px;
+				}
+
+				.gallary_view a:hover {
+
+					transition: 100ms border;
+					box-shadow: 0 0 100px 8px #66fcf1;
+					border-radius: 5px;
+				}
+
+				.gallary_view a img {
+					width: 100%;
+				}
+			</style>
+
+			<div class="gallary_view">
+				<a href="13ry.html">
+					<img src="garden_cat_03.jpg"/>
+				</a>
+
+				<a href="GOT.html">
+					<img src="garden_cat_04.jpg" />
+				</a>
+				<a href="sg.html">
+					<img src="sg.jpg" />
+				</a>
+				<a href="breakingBad.html">
+					<img src="garden_cat_06.jpg" />
+				</a>
+				<a href="familyMan.html">
+					<img src="family-man.png" />
+				</a>
+				<a href="strangerThings.html">
+					<img src="stranger.jpg" />
+				</a>
+				<a href="sherlock.html">
+					<img src="sherlock.jpg" />
+				</a>
+				<a href="deception.html">
+					<img src="deception.jpg" />
+				</a>
+				<a href="formula.html">
+					<img src="f1-small.jpg" />
+				</a>
+				<a href="watchmen.html">
+					<img src="wn-small.jpg" />
+				</a>
+				<a href="rickAndMorty.html">
+					<img src="rick-small.jpg" />
+				</a>
+				<a href="alteredCarbon.html">
+					<img src="altered-small.jpg" />
+				</a>
+			</div>
+			</div>
+<style>
+ /*footer styling*/
+.footer {
+  width: 100%;
+  height: 8vw;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-top:0px;
+
+}
+
+.footer p{
+position:relative;
+top:50%;
+transform:translateY(-50%);
+}
+
+</style>
+<hr width=100% size=6px noshade	color="#66fcf1">
+<div class="footer">
+  <p>Public Review - your one stop to check the popularity of the tv series currently running across the globe.</p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	var myIndex = 0;
+	carousel();
+	function carousel() {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		myIndex++;
+		if (myIndex > x.length) {myIndex = 1}
+		x[myIndex-1].style.display = "block";
+		setTimeout(carousel, 4000); // Change image every 2 seconds
+	}
+</script>
+
+</body>
+</html>

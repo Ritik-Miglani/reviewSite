@@ -1,0 +1,217 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="feedback form">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src='loginsearch.js'></script>
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+</head>
+<body bgcolor="black" >
+<div id="hide1" class="login-screen">
+        <div class="gradient-bg">
+			<div class="login-box">
+				<img src="logo.png" class="avatar">
+				<form class="animate" method="post" onsubmit="return checkLogin()">
+					<h1>Login Here</h1>
+					<p>Username</p>
+					<input type="text" name="username" placeholder="Enter Username" id="user">
+					<p>Password</p>
+					<input type="password" name="password" placeholder="Enter Password" id="pass">
+					<input type="submit" name="submit" value="Login">
+					<span onclick="document.getElementById('hide1').style.display='none'" class="close" title="Close Modal">&times;</span>
+					<a href="forget.html">Forget Password</a>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<div class="topnav1">
+		<a href="homepage.html"><img src="behenchod.png" style="height:15%; margin-left: 10%; margin-top:3px; "> </a>
+		<div class="search-container">
+			<input type="text" placeholder="Search for products,brands.." id="search_box_input" onkeydown="document.getElementById('s_result').style.display='block'" onkeyup="searchresult()"><button type="submit"><i class="fa fa-search"></i></button>
+			<div class="search_result" id="s_result">
+				<ul id="myMenu">
+					<li><a href="sg.html">sacred games</a>
+					<li><a href="watchmen.html">Watchmen</a>
+					<li><a href="strangerThings.html">stranger things</a>
+					<li><a href="13ry.html">13 reasons why</a>
+					<li><a href="sherlock.html">sherlock</a>
+					<li><a href="deception.html">deception</a>
+					<li><a href="rickAndMorty.html">rick and morty</a>
+					<li><a href="GOT.html">game of thrones</a>
+					<li><a href="familyMan.html">the family man</a>
+					<li><a href="alteredCarbon.html">altered carbon</a>
+					<li><a href="breakingBad.html">breaking bad</a>
+					<li><a href="formula.html">formula 1</a>
+			</ul>
+		</div>
+		</div>
+	</div>
+	<div class="topnav">
+		<a href="homepage.html">Home</a>
+		<a href="trending.html">Trending Shows</a>
+		<a href="feedback.html">Feedback Form</a>
+		<a href="about-us.html">About us</a>
+		<button onclick="document.getElementById('hide1').style.display='block'" class="right"><i class="fa fa-fw fa-user"></i>Log In</button>
+	</div><br><br>
+	<h1 align="center">Feedback Form</h1><br>
+
+	<div class="bg-img"> 
+
+		<form action="action_page.php" method="post" class="container" onsubmit="return validate()" >
+			<label for="fname">First Name</label>
+			<input type="text" id="fname" name="firstname" placeholder="Your first name">
+			<div class="error" id="nameErr"></div><br>
+
+			<label for="lname">Last Name</label>
+			<input type="text" id="lname" name="lastname" placeholder="Your last name">
+			<div class="error" id="lnameErr"></div><br>
+			
+			<label for="email">Age</label>
+			<input type="text" id="age" name="age" placeholder="Your age">
+			<div class="error" id="ageErr"></div><br>
+			
+			<label for="email">Sex</label>
+			<input type="text" id="sex" name="sex" placeholder="Your sex">
+			<div class="error" id="sexErr"></div><br>
+
+			<label for="email">Email</label>
+			<input type="text" id="email" name="email" placeholder="Your email id">
+			<div class="error" id="emailErr"></div><br>
+			
+			<label for="email">Location</label>
+			<input type="text" id="loc" name="location" placeholder="Your location">
+			<div class="error" id="locErr"></div><br>
+			
+			<label for="subject">Feedback</label>
+			<textarea id="feed" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+			<div class="error" id="feedErr"></div><br><br>
+
+			<label for="rating">Rate Your Experience (1-5)</label></br></br>
+
+			<input type="radio" name="star" value="1" class='far fa-star' style='font-size:48px;color:red'>
+			<input type="radio" name="star" value="2" class='far fa-star' style='font-size:48px;color:orangered'>
+			<input type="radio" name="star" value="3" class='far fa-star' style='font-size:48px;color:darkorange' >
+			<input type="radio" name="star" value="4"class='far fa-star' style='font-size:48px;color:green'>
+			<input type="radio" name="star" value="5" class='far fa-star' style='font-size:48px;color:darkgreen'>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+<script>
+	function printError(elemId, hintMsg) {
+    document.getElementById(elemId).innerHTML = hintMsg;
+}
+	function validate() {
+		// Make quick references to our fields.
+		var fname = document.getElementById('fname');
+		var lname = document.getElementById('lname');
+		var age = document.getElementById('age');
+		var sex = document.getElementById('sex');
+		var location = document.getElementById('loc');
+		var email = document.getElementById('email');
+		var feedback = document.getElementById('feed');
+		// To check empty form fields.
+		var nameErr = ageErr = lnameErr = sexErr = locErr = feedErr = emailErr = true;
+
+		
+		if(fname.value == "") {
+			printError("nameErr", "Please enter your name");
+		}
+		else {
+			var regex = /^[a-zA-Z\s]+$/;                
+			if(regex.test(fname.value) === false) {
+				printError("nameErr", "Please enter a valid name");
+			} else {
+				printError("nameErr", "");
+				nameErr = false;
+			}
+		}
+		
+		if(lname.value == "") {
+			printError("lnameErr", "Please enter your last name");
+		}
+		else {
+			var regex = /^[a-zA-Z\s]+$/;                
+			if(regex.test(lname.value) === false) {
+				printError("lnameErr", "Please enter a valid name");
+			} else {
+				printError("lnameErr", "");
+				lnameErr = false;
+			}
+		}
+		
+		if(age.value=='')
+		{
+			printError("ageErr", "Please enter age");
+		}
+		else
+		{
+			printError("ageErr", "");
+			ageErr = false;
+		}
+		if(sex.value == "")
+		{
+			printError("sexErr", "Please enter sex");
+		}
+		else
+		{
+			if(sex.value=="male"||sex.value=="MALE"||sex.value=="female"||sex.value=="FEMALE")
+			{
+				printError("sexErr", "");
+				sexErr = false;
+			}
+			else
+			{
+				printError("sexErr", "Enter correctly");
+			}
+		}
+		if(location.value == "")
+		{
+			printError("locErr","Please enter location");
+		}
+		else
+		{
+			printError("locErr","");
+			locErr=false;
+		}
+		
+		if(email.value == "")
+		{
+			printError("emailErr","Please enter Email ");
+		}
+		else
+		{
+			var regex = /^\S+@\S+\.\S+$/;
+			if(regex.test(email.value) === false) 
+			{
+				printError("emailErr", "Please enter a valid email address");
+			} 
+			else
+			{
+				printError("emailErr", "");
+				emailErr = false;
+			}
+		}
+		
+		if(feedback.value=="")
+		{
+			printError("feedErr","Enter feedback");
+		}
+		else
+		{
+			printError("feedErr","");
+			feedErr=false;
+			
+		}
+		
+		if((nameErr || sexErr || emailErr || ageErr || locErr || feedErr || lnameErr) == true) 
+		{
+			return false;
+		}
+		
+};
+</script>
+</body>
+</html>

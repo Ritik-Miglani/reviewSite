@@ -1,0 +1,11 @@
+.dimg{
+  margin:30px;
+
+ }
+ .dimg img{
+  height:300px;
+  border: 1px solid #444;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 0 40px 0.2px #66fcf1 ;
+}
